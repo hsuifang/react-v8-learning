@@ -8,15 +8,15 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: Infinity,
-      cacheTime: <In></In>,
+      cacheTime: Infinity,
     },
   },
 });
 
 const App = () => {
   return (
-    <BrowserRouter client={queryClient}>
-      <QueryClientProvider>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
         <header>
           <Link to="/">
             <h1>Adopt Me!</h1>
