@@ -3,5 +3,5 @@ import fetchBreedList from "./fetchBreedList";
 
 export default function useBreadList(animal) {
   const results = useQuery(["breeds", animal], fetchBreedList);
-  return [results?.data?.breed ?? [], results.status];
+  return [results?.data?.breeds ?? [], results.status];
 }
