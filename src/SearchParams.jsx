@@ -22,8 +22,9 @@ function SearchParams() {
   const [adoptedPet] = useContext(AdoptedPetContext);
 
   return (
-    <div className="search-params">
+    <div className="mx-auto my-0 w-11/12">
       <form
+        className="mb-10 flex flex-col items-center justify-center rounded-lg bg-gray-200 p-10 shadow-lg"
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.target);
@@ -46,6 +47,7 @@ function SearchParams() {
           type="text"
           name="location"
           placeholder="location"
+          className="mb-5 block w-60"
         />
         <label htmlFor="animals">Animals</label>
         <select
@@ -57,6 +59,7 @@ function SearchParams() {
           onBlur={(e) => {
             setAnimal(e.target.value);
           }}
+          className="mb-5 block w-60"
         >
           <option />
           {ANIMALS.map((animal) => (
@@ -66,7 +69,12 @@ function SearchParams() {
           ))}
         </select>
         <label htmlFor="breed">Breed</label>
-        <select id="breed" name="breed" disabled={breads.length === 0}>
+        <select
+          id="breed"
+          name="breed"
+          disabled={breads.length === 0}
+          className="mb-5 block w-60 disabled:opacity-50"
+        >
           <option />
           {breads.map((breed) => (
             <option value={breed} key={breed}>
@@ -75,7 +83,9 @@ function SearchParams() {
           ))}
         </select>
 
-        <button>Submit</button>
+        <button className="color rounded-3xl bg-orange-500 px-6 py-2 text-white">
+          Submit
+        </button>
       </form>
       <Results pets={pets} />;
     </div>
