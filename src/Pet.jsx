@@ -6,11 +6,11 @@ const Pet = ({ name, animal, breed, images, location, id }) => {
     hero = images[0];
   }
   return (
-    <Link to={`details/${id}`} className="pet">
-      <div className="image-container">
+    <Link to={`details/${id}`} className="relative mb-3 block">
+      <div className="block">
         <img src={hero} alt={name} />
       </div>
-      <div className="info">
+      <div className="absolute left-0 bottom-0 w-full bg-gradient-to-tr from-white to-transparent p-3">
         <h1>{name}</h1>
         <h2>
           {animal} - {breed} - {location}
